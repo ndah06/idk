@@ -40,13 +40,17 @@ while(a):
             monthly_saved = yearly_salary*portion_saved/12
 
     if amount_saved > maximum:
-        portion_saved = (portion_saved+low)/2
-        print("hi")
+        high = portion_saved
+        portion_saved = (high+low)/2
     elif amount_saved < minimum:
-        portion_saved = (high+portion_saved)/2
-        print("bye")
+        low = portion_saved
+        portion_saved = (high+low)/2
     else:
         print(portion_saved)
         a = False
     count +=1
     print(count)
+    if(count>99):
+        print("Not Possible")
+        break
+    
