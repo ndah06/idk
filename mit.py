@@ -3,10 +3,6 @@
 ## Time Spent:
 ## Collaborators:
 
-##############################################
-## Get user input for initial_deposit below ##
-##############################################
-
 
 #########################################################################
 ## Initialize other variables you need (if any) for your program below ##
@@ -39,14 +35,16 @@ while(a):
     
     for i in range(0,months):
         amount_saved += monthly_saved + amount_saved*r/12
-        if(months%6==0):
+        if(i%6==0):
             yearly_salary += yearly_salary*semi_annual_raise
             monthly_saved = yearly_salary*portion_saved/12
 
     if amount_saved > maximum:
-        portion_saved -= (portion_saved-low)/2
+        portion_saved = (portion_saved+low)/2
+        print("hi")
     elif amount_saved < minimum:
-        portion_saved += (high-portion_saved)/2
+        portion_saved = (high+portion_saved)/2
+        print("bye")
     else:
         print(portion_saved)
         a = False
